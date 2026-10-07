@@ -104,7 +104,7 @@ BEGIN
 			WHEN  'R' THEN 'Road'
 			WHEN  'S' THEN 'Other Sales'
 			WHEN  'T' THEN 'Touring'
-			ELSE 'unkown'
+			ELSE 'unknown'
 		END AS prd_line,
 		CAST(prd_start_dt AS DATE) AS prd_start_dt,
 		CAST(LEAD(prd_start_dt) OVER (PARTITION BY prd_key ORDER BY prd_start_dt ASC)-1 AS DATE) AS prd_end_dt --calculate end date as one day before the next start date
